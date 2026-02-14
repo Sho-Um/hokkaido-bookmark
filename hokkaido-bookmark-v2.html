@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>❄️ 北海道ふゆたび しおり 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Kaisei+Opti:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --snow: #F7F3EE;
+    --ice-blue: #B8D8E8;
+    --night-blue: #2B4066;
+    --candle-orange: #E8A87C;
+    --sakura: #F2C6C2;
+    --lavender: #C5B9D8;
+    --mint: #B5D8CC;
+    --deep-rose: #C2727A;
+    --warm-cream: #FFF8F0;
+    --soft-gray: #8B8B8B;
+    --gold: #D4A94B;
+  }
+
+  body {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    background: var(--snow);
+    color: var(--night-blue);
+    overflow-x: hidden;
+  }
+
+  /* Snowfall */
+  .snowflakes {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 999;
+    overflow: hidden;
+  }
+  .snowflake {
+    position: absolute;
+    top: -20px;
+    color: white;
+    font-size: 14px;
+    opacity: 0.7;
+    animation: fall linear infinite;
+    text-shadow: 0 0 4px rgba(184,216,232,0.5);
+  }
+  @keyframes fall {
+    to { transform: translateY(105vh) rotate(360deg); }
+  }
+
+  /* Cover */
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #1e3354 0%, #2B4066 15%, #4A6FA5 40%, #B8D8E8 70%, #F7F3EE 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 40px 20px;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 60%, rgba(184,216,232,0.1) 0%, transparent 40%);
+    pointer-events: none;
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,60 Q150,0 300,60 T600,60 T900,60 T1200,60 V120 H0Z' fill='%23F7F3EE'/%3E%3C/svg%3E") no-repeat bottom center;
+    background-size: cover;
+  }
+  .cover-card {
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1.5px solid rgba(255,255,255,0.25);
+    border-radius: 32px;
+    padding: 52px 44px;
+    text-align: center;
+    max-width: 400px;
+    position: relative;
+    z-index: 2;
+    animation: floatIn 1.2s ease-out;
+  }
+  @keyframes floatIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .cover-emoji {
+    font-size: 52px;
+    margin-bottom: 16px;
+    animation: twinkle 3s ease-in-out infinite;
+    letter-spacing: 8px;
+  }
+  @keyframes twinkle {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+  }
+  .cover-title {
+    font-family: 'Kaisei Opti', serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 6px;
+    margin-bottom: 6px;
+    text-shadow: 0 2px 16px rgba(43,64,102,0.25);
+  }
+  .cover-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.8);
+    letter-spacing: 3px;
+    margin-bottom: 24px;
+  }
+  .cover-dates {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50px;
+    padding: 9px 28px;
+    font-size: 13px;
+    color: #fff;
+    letter-spacing: 1.5px;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+  .cover-version {
+    margin-top: 16px;
+    font-size: 10px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 1px;
+  }
+
+  /* Main content */
+  .content {
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 20px 20px 60px;
+  }
+
+  /* Day card */
+  .day-card {
+    background: #fff;
+    border-radius: 24px;
+    margin-bottom: 28px;
+    overflow: hidden;
+    box-shadow: 0 4px 28px rgba(43,64,102,0.06);
+    animation: slideUp 0.6s ease-out both;
+  }
+  .day-card:nth-child(1) { animation-delay: 0.1s; }
+  .day-card:nth-child(2) { animation-delay: 0.3s; }
+  .day-card:nth-child(3) { animation-delay: 0.5s; }
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .day-header {
+    padding: 22px 24px 14px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .day-badge {
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .day-badge .num { font-size: 20px; line-height: 1; }
+  .day-badge .label { font-size: 9px; letter-spacing: 1px; margin-top: 2px; }
+  .day1 .day-badge { background: linear-gradient(135deg, #7EB5D6, var(--night-blue)); }
+  .day2 .day-badge { background: linear-gradient(135deg, #B9A0D4, #6B5A9E); }
+  .day3 .day-badge { background: linear-gradient(135deg, #8BC5B0, #3A7D65); }
+
+  .day-title-area h2 {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+  .day-title-area .route {
+    font-size: 11px;
+    color: var(--soft-gray);
+    margin-top: 3px;
+    letter-spacing: 0.5px;
+  }
+
+  .day-body {
+    padding: 0 24px 24px;
+  }
+
+  /* Timeline */
+  .timeline {
+    position: relative;
+    padding-left: 24px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    border-radius: 2px;
+  }
+  .day1 .timeline::before { background: linear-gradient(to bottom, var(--ice-blue), var(--candle-orange)); }
+  .day2 .timeline::before { background: linear-gradient(to bottom, var(--lavender), var(--mint)); }
+  .day3 .timeline::before { background: linear-gradient(to bottom, var(--mint), var(--ice-blue)); }
+
+  .tl-item {
+    position: relative;
+    padding-bottom: 18px;
+  }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-dot {
+    position: absolute;
+    left: -21px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2.5px solid var(--ice-blue);
+    background: #fff;
+  }
+  .tl-item.highlight .tl-dot {
+    background: var(--candle-orange);
+    border-color: var(--candle-orange);
+    box-shadow: 0 0 8px rgba(232,168,124,0.4);
+  }
+  .tl-item.highlight-purple .tl-dot {
+    background: var(--lavender);
+    border-color: #7B68AE;
+    box-shadow: 0 0 8px rgba(123,104,174,0.3);
+  }
+  .tl-item.highlight-green .tl-dot {
+    background: var(--mint);
+    border-color: #4A8B6A;
+    box-shadow: 0 0 8px rgba(74,139,106,0.3);
+  }
+  .tl-time {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--soft-gray);
+    margin-bottom: 2px;
+  }
+  .tl-content {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+  .tl-content .place {
+    font-weight: 700;
+    color: var(--night-blue);
+  }
+  .tl-content .desc {
+    font-size: 12px;
+    color: #777;
+    margin-top: 2px;
+    line-height: 1.6;
+  }
+  .tl-tag {
+    display: inline-block;
+    font-size: 10px;
+    padding: 2px 9px;
+    border-radius: 50px;
+    margin-top: 5px;
+    margin-right: 4px;
+    font-weight: 500;
+  }
+  .tag-food { background: #FFF0E6; color: #C47A3A; }
+  .tag-event { background: #E6F0FF; color: #4A6FA5; }
+  .tag-shop { background: #F0E6FF; color: #7B68AE; }
+  .tag-exp { background: #E6FFF0; color: #4A8B6A; }
+  .tag-relax { background: #FFF0F0; color: #C2727A; }
+  .tag-new { background: #FFF6DB; color: #B8860B; }
+
+  /* Tip boxes */
+  .tip-box {
+    background: var(--warm-cream);
+    border-radius: 16px;
+    padding: 14px 16px;
+    margin-top: 16px;
+    font-size: 12px;
+    line-height: 1.7;
+    color: #6B5E4F;
+    border-left: 3px solid var(--candle-orange);
+  }
+  .tip-box .tip-label {
+    font-weight: 700;
+    color: var(--candle-orange);
+    margin-bottom: 2px;
+  }
+  .tip-box.tip-purple { border-left-color: #7B68AE; }
+  .tip-box.tip-purple .tip-label { color: #7B68AE; }
+  .tip-box.tip-green { border-left-color: #4A8B6A; }
+  .tip-box.tip-green .tip-label { color: #4A8B6A; }
+
+  /* Section headers */
+  .section-header {
+    text-align: center;
+    padding: 44px 0 22px;
+  }
+  .section-header .emoji { font-size: 32px; margin-bottom: 8px; }
+  .section-header h3 {
+    font-family: 'Kaisei Opti', serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+  .section-header .line {
+    width: 40px;
+    height: 2px;
+    background: var(--candle-orange);
+    margin: 10px auto 0;
+    border-radius: 2px;
+  }
+
+  /* Day 3 alternatives tabs */
+  .alt-tabs {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .alt-tab {
+    flex: 1;
+    min-width: 0;
+    padding: 10px 6px;
+    border: 2px solid #E0DDD8;
+    border-radius: 14px;
+    background: #fff;
+    cursor: pointer;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--soft-gray);
+    transition: all 0.25s ease;
+    font-family: inherit;
+    line-height: 1.4;
+  }
+  .alt-tab:hover { border-color: var(--ice-blue); }
+  .alt-tab.active {
+    border-color: #3A7D65;
+    background: linear-gradient(135deg, #E6FFF0, #F0FFF6);
+    color: #3A7D65;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(58,125,101,0.1);
+  }
+  .alt-tab .tab-emoji { font-size: 18px; display: block; margin-bottom: 3px; }
+  .alt-tab .tab-rec {
+    display: inline-block;
+    font-size: 8px;
+    background: #3A7D65;
+    color: #fff;
+    padding: 1px 6px;
+    border-radius: 50px;
+    margin-top: 3px;
+  }
+
+  .alt-panel { display: none; }
+  .alt-panel.active { display: block; }
+
+  /* Food & souvenirs grid */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .mini-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(43,64,102,0.05);
+    transition: transform 0.2s;
+  }
+  .mini-card:hover { transform: translateY(-3px); }
+  .mini-card .mc-emoji { font-size: 28px; margin-bottom: 6px; }
+  .mini-card .mc-name { font-size: 13px; font-weight: 700; }
+  .mini-card .mc-detail { font-size: 10px; color: var(--soft-gray); margin-top: 4px; line-height: 1.5; }
+  .mini-card .mc-when {
+    display: inline-block;
+    font-size: 9px;
+    background: var(--ice-blue);
+    color: var(--night-blue);
+    padding: 2px 8px;
+    border-radius: 50px;
+    margin-top: 6px;
+    font-weight: 500;
+  }
+
+  /* SHIRO detail card */
+  .detail-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 24px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 16px rgba(43,64,102,0.05);
+  }
+  .detail-card h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .detail-card .detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px dashed #EDE8E3;
+    font-size: 12px;
+  }
+  .detail-card .detail-row:last-child { border-bottom: none; }
+  .detail-card .detail-label { color: var(--soft-gray); }
+  .detail-card .detail-val { font-weight: 700; }
+
+  /* Menu card */
+  .menu-item {
+    background: linear-gradient(135deg, #FDFAF6, #FFF8F0);
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    border: 1px solid #F0EBE4;
+  }
+  .menu-item .menu-name {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .menu-item .menu-desc {
+    font-size: 11px;
+    color: #888;
+    line-height: 1.5;
+  }
+  .menu-item .menu-price {
+    font-size: 11px;
+    color: var(--candle-orange);
+    font-weight: 700;
+    margin-top: 4px;
+  }
+
+  /* Checklist */
+  .checklist {
+    background: #fff;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 2px 16px rgba(43,64,102,0.05);
+  }
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 0;
+    font-size: 13px;
+    line-height: 1.5;
+    border-bottom: 1px dashed #EDE8E3;
+    cursor: pointer;
+    user-select: none;
+  }
+  .check-item:last-child { border-bottom: none; }
+  .check-box {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--ice-blue);
+    border-radius: 6px;
+    flex-shrink: 0;
+    margin-top: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+  .check-item.checked .check-box {
+    background: var(--mint);
+    border-color: #4A8B6A;
+  }
+  .check-item.checked .check-box::after {
+    content: '✓';
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .check-item.checked .check-text {
+    text-decoration: line-through;
+    color: #bbb;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 44px 20px 60px;
+    font-size: 12px;
+    color: var(--soft-gray);
+    letter-spacing: 1px;
+    line-height: 1.8;
+  }
+  .footer .big-emoji { font-size: 36px; margin-bottom: 12px; letter-spacing: 6px; }
+
+  /* Print */
+  @media print {
+    .snowflakes { display: none; }
+    .cover { min-height: auto; padding: 30px; break-after: page; }
+    .day-card { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Snowfall -->
+<div class="snowflakes" id="snow"></div>
+
+<!-- Cover -->
+<div class="cover">
+  <div class="cover-card">
+    <div class="cover-emoji">❄️ 🦌 ✨</div>
+    <div class="cover-title">北海道ふゆたび</div>
+    <div class="cover-sub">〜 雪と光とおいしいもの 〜</div>
+    <div class="cover-dates">2026. 2. 14 sat → 2. 16 mon</div>
+    <div class="cover-version">updated edition</div>
+  </div>
+</div>
+
+<!-- Content -->
+<div class="content">
+
+  <!-- ═══════════ DAY 1 ═══════════ -->
+  <div class="day-card day1">
+    <div class="day-header">
+      <div class="day-badge">
+        <span class="num">14</span>
+        <span class="label">SAT</span>
+      </div>
+      <div class="day-title-area">
+        <h2>🕯️ キャンドルの街へ</h2>
+        <div class="route">広島 ✈ 新千歳 → 札幌 → 小樽 → 札幌</div>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-time">08:05 → 10:00</div>
+          <div class="tl-content">
+            <span class="place">✈ 広島空港 → 新千歳空港</span>
+            <div class="desc">JR快速エアポートで札幌へ → ベッセルイン札幌中島公園に荷物を預けて身軽に！</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-time">13:00 〜 15:30</div>
+          <div class="tl-content">
+            <span class="place">🍪 白い恋人パーク</span>
+            <div class="desc">お絵描きコース（約30分）でオリジナルクッキーづくり♡ 2026年は工場見学が休止中 → 360°バーチャル見学＆クイズラリーを楽しもう</div>
+            <span class="tl-tag tag-exp">体験</span>
+            <span class="tl-tag tag-shop">要予約</span>
+          </div>
+        </div>
+        <div class="tl-item highlight">
+          <div class="tl-dot"></div>
+          <div class="tl-time">16:30 〜 21:00</div>
+          <div class="tl-content">
+            <span class="place">🕯️ 小樽雪あかりの路【最終日！】</span>
+            <div class="desc">小樽オルゴール堂 → 17:00 約6万本のキャンドル点灯✨ 運河の浮き玉キャンドル、手宮線のスノーキャンドルは必見</div>
+            <span class="tl-tag tag-event">イベント</span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-time">小樽の夜</div>
+          <div class="tl-content">
+            <span class="place">🍣 回転寿司</span>
+            <div class="desc">港町の地魚ネタ！ ホタテ・八角・ニシン（和楽 / 函太郎）</div>
+            <span class="tl-tag tag-food">グルメ</span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-time">22:00 〜</div>
+          <div class="tl-content">
+            <span class="place">🍨 〆パフェ（すすきの）</span>
+            <div class="desc">ななかま堂（〜2:00）/ ROJIURA CAFE（〜3:00）が深夜でも安心◎</div>
+            <span class="tl-tag tag-food">グルメ</span>
+          </div>
+        </div>
+      </div>
+      <div class="tip-box">
+        <div class="tip-label">💡 ポイント</div>
+        雪あかりの路は 2/14 が最終日！この日限りです。数万本のキャンドルは市民ボランティアが一本ずつ手で灯しています🕯️ 防寒装備は万全に！
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ DAY 2 ═══════════ -->
+  <div class="day-card day2">
+    <div class="day-header">
+      <div class="day-badge">
+        <span class="num">15</span>
+        <span class="label">SUN</span>
+      </div>
+      <div class="day-title-area">
+        <h2>🌿 自分だけの香りをつくる</h2>
+        <div class="route">札幌 → 砂川 → 札幌</div>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="timeline">
+        <div class="tl-item highlight-purple">
+          <div class="tl-dot"></div>
+          <div class="tl-time">10:00 〜 15:00</div>
+          <div class="tl-content">
+            <span class="place">🧴 SHIRO みんなの工場</span>
+            <div class="desc">① まず整理券を取る！→ ② ガラス張り工場見学 → ③ ブレンダーラボでマイフレグランスづくり → ④ SHIRO CAFEでランチ♡</div>
+            <span class="tl-tag tag-exp">体験</span>
+            <span class="tl-tag tag-food">カフェ</span>
+            <span class="tl-tag tag-new">限定メニュー</span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-time">16:00 〜 18:30</div>
+          <div class="tl-content">
+            <span class="place">🛍️ おみやげ調達タイム</span>
+            <div class="desc">SNOWS → 札幌市内の百貨店（大丸札幌店など）で探索。雪まつりは2/11に終了しているので注意⚠️</div>
+            <span class="tl-tag tag-shop">おみやげ</span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-time">19:00 〜</div>
+          <div class="tl-content">
+            <span class="place">🍛 スープカレー</span>
+            <div class="desc">SAMURAI.（野菜）/ KING本店（Wスープ）/ マジックスパイス（元祖）</div>
+            <span class="tl-tag tag-food">グルメ</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-box tip-purple">
+        <div class="tip-label">💡 SHIROのポイント</div>
+        ブレンダーラボは予約不可！当日発券機で整理券を取る方式。到着したらまず整理券→カフェやショップで待つのが正解◎ 最終受付 18:30
+      </div>
+    </div>
+  </div>
+
+  <!-- SHIRO Deep Dive -->
+  <div class="section-header">
+    <div class="emoji">🧴</div>
+    <h3>SHIRO くわしく</h3>
+    <div class="line"></div>
+  </div>
+
+  <div class="detail-card">
+    <h4>🧪 ブレンダーラボ</h4>
+    <div class="detail-row">
+      <span class="detail-label">所要時間</span>
+      <span class="detail-val">約15分</span>
+    </div>
+    <div class="detail-row">
+      <span class="detail-label">40mL</span>
+      <span class="detail-val">¥4,180（税込）</span>
+    </div>
+    <div class="detail-row">
+      <span class="detail-label">80mL</span>
+      <span class="detail-val">¥5,170（税込）</span>
+    </div>
+    <div class="detail-row">
+      <span class="detail-label">タイプ</span>
+      <span class="detail-val">オードパルファン / ボディコロン</span>
+    </div>
+    <div class="detail-row">
+      <span class="detail-label">砂川限定</span>
+      <span class="detail-val" style="color:#C2727A;">🍑 フルーツブーケ</span>
+    </div>
+    <div class="detail-row">
+      <span class="detail-label">定番の香り</span>
+      <span class="detail-val" style="font-weight:400; font-size:11px;">サボン / ホワイトリリー / ホワイトティー / アールグレイ / キンモクセイ ほか</span>
+    </div>
+  </div>
+
+  <div class="detail-card">
+    <h4>🍕 SHIRO CAFE 限定メニュー（2月〜）</h4>
+    <div class="menu-item">
+      <div class="menu-name">🐟 スモークサーモンとルッコラのサラダピッツァ</div>
+      <div class="menu-desc">スモークサーモン × 白糠町産リコッタチーズ。ルッコラ＆ミニトマトでサラダ感覚の軽やかさ</div>
+      <div class="menu-price">¥2,200</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-name">🍖 自家製サルシッチャ 道産チーズとキノコのピッツァ</div>
+      <div class="menu-desc">ハーブ香る自家製腸詰め × 4種キノコ。沼田町の間伐材で焚く薪窯焼き</div>
+      <div class="menu-price">¥2,200</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-name">🍫 自家製チョコレートプリン（バレンタイン限定）</div>
+      <div class="menu-desc">カカオ × メープル × 三温糖のやさしい甘さ。いちごソース添え</div>
+      <div class="menu-price">¥825</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-name">🍫 チョコバスクチーズケーキ（バレンタイン限定）</div>
+      <div class="menu-desc">チーズ × チョコの濃厚ハーモニー。チョコチップ＆クランブルの食感がアクセント</div>
+      <div class="menu-price">¥990</div>
+    </div>
+  </div>
+
+  <!-- ═══════════ DAY 3 ═══════════ -->
+  <div class="day-card day3">
+    <div class="day-header">
+      <div class="day-badge">
+        <span class="num">16</span>
+        <span class="label">MON</span>
+      </div>
+      <div class="day-title-area">
+        <h2>♨️ ゆっくり最終日</h2>
+        <div class="route">札幌 → ??? → 新千歳空港 ✈ 広島</div>
+      </div>
+    </div>
+    <div class="day-body">
+
+      <p style="font-size:12px; color:#888; margin-bottom:14px; line-height:1.6;">
+        支笏湖氷濤まつりはキャンセル🙅 → 飛行機に間に合わないリスク＆3日目の体力を考えて、もっとのんびり楽しもう！
+      </p>
+
+      <!-- Tab switcher -->
+      <div class="alt-tabs">
+        <button class="alt-tab active" onclick="switchPlan('a')">
+          <span class="tab-emoji">♨️</span>
+          Fビレッジ
+          <span class="tab-rec">おすすめ</span>
+        </button>
+        <button class="alt-tab" onclick="switchPlan('b')">
+          <span class="tab-emoji">⛷️</span>
+          スノーランド
+        </button>
+        <button class="alt-tab" onclick="switchPlan('c')">
+          <span class="tab-emoji">🐟</span>
+          千歳水族館
+        </button>
+      </div>
+
+      <!-- Plan A: F Village -->
+      <div id="plan-a" class="alt-panel active">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">09:30</div>
+            <div class="tl-content">
+              <span class="place">🏨 チェックアウト</span>
+              <div class="desc">JRで北広島駅へ（約20分）</div>
+            </div>
+          </div>
+          <div class="tl-item highlight-green">
+            <div class="tl-dot"></div>
+            <div class="tl-time">11:00 〜 14:00</div>
+            <div class="tl-content">
+              <span class="place">♨️ Fビレッジ（エスコンフィールド）</span>
+              <div class="desc">tower eleven onsen & sauna で旅の疲れをリセット🧖‍♀️ フィールドを見渡す天然温泉！</div>
+              <span class="tl-tag tag-relax">温泉</span>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">14:00 〜 15:30</div>
+            <div class="tl-content">
+              <span class="place">🍕 球場内グルメ</span>
+              <div class="desc">函太郎（回転寿司）/ ダ ミケーレ（ナポリピッツァ）/ よなよなエール（クラフトビール🍺）</div>
+              <span class="tl-tag tag-food">グルメ</span>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">16:30</div>
+            <div class="tl-content">
+              <span class="place">✈ 新千歳空港</span>
+              <div class="desc">生ノースマン購入🥐 → ソフトクリーム🍦 → 18:40 搭乗</div>
+              <span class="tl-tag tag-shop">おみやげ</span>
+            </div>
+          </div>
+        </div>
+        <div class="tip-box tip-green">
+          <div class="tip-label">✨ おすすめの理由</div>
+          温泉＆サウナで3日分の冷えと疲れをリセット → 屋内で天候の心配なし → 空港までJRで約20分の安心感。月曜も温泉・レストランは営業中◎
+        </div>
+      </div>
+
+      <!-- Plan B: Snow Land -->
+      <div id="plan-b" class="alt-panel">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">09:30</div>
+            <div class="tl-content">
+              <span class="place">🏨 チェックアウト</span>
+              <div class="desc">JRまたはバスで千歳へ</div>
+            </div>
+          </div>
+          <div class="tl-item highlight-green">
+            <div class="tl-dot"></div>
+            <div class="tl-time">10:00 〜 14:00</div>
+            <div class="tl-content">
+              <span class="place">⛷️ ノーススノーランド in 千歳</span>
+              <div class="desc">チューブスライダー、スノーラフティング、四輪バギー、EVスノーバイク…！ 雪遊び全力で✊</div>
+              <span class="tl-tag tag-exp">アクティビティ</span>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">16:30</div>
+            <div class="tl-content">
+              <span class="place">✈ 新千歳空港（空港から約15分！）</span>
+              <div class="desc">生ノースマン購入🥐 → ソフトクリーム🍦 → 18:40 搭乗</div>
+              <span class="tl-tag tag-shop">おみやげ</span>
+            </div>
+          </div>
+        </div>
+        <div class="tip-box tip-green">
+          <div class="tip-label">⛷️ こんな人におすすめ</div>
+          最後まで雪を全身で楽しみたい人に！空港から約15分と超近くてギリギリまで遊べる。ただし完全屋外なので吹雪の日は厳しいかも🌨️
+        </div>
+      </div>
+
+      <!-- Plan C: Aquarium -->
+      <div id="plan-c" class="alt-panel">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">09:30</div>
+            <div class="tl-content">
+              <span class="place">🏨 チェックアウト</span>
+              <div class="desc">JRで千歳駅へ</div>
+            </div>
+          </div>
+          <div class="tl-item highlight-green">
+            <div class="tl-dot"></div>
+            <div class="tl-time">10:00 〜 13:00</div>
+            <div class="tl-content">
+              <span class="place">🐟 サケのふるさと 千歳水族館</span>
+              <div class="desc">千歳川の川底をガラス越しに覗く「水中観察ゾーン」が唯一無二！日本最大級の淡水水槽も</div>
+              <span class="tl-tag tag-exp">見学</span>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">13:00 〜 15:00</div>
+            <div class="tl-content">
+              <span class="place">🛍️ 道の駅サーモンパーク千歳</span>
+              <div class="desc">隣接する道の駅で地元の特産品＆あったかごはん</div>
+              <span class="tl-tag tag-shop">おみやげ</span>
+              <span class="tl-tag tag-food">グルメ</span>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-time">16:30</div>
+            <div class="tl-content">
+              <span class="place">✈ 新千歳空港（千歳駅から快速7分）</span>
+              <div class="desc">生ノースマン購入🥐 → ソフトクリーム🍦 → 18:40 搭乗</div>
+              <span class="tl-tag tag-shop">おみやげ</span>
+            </div>
+          </div>
+        </div>
+        <div class="tip-box tip-green">
+          <div class="tip-label">🌨️ こんな人におすすめ</div>
+          猛吹雪の日のバックアップに最適！完全屋内で天候に左右されない。静かに水槽を眺めるのんびり派にも◎ 2月は10:00〜16:00の営業
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Food & Souvenirs -->
+  <div class="section-header">
+    <div class="emoji">🍽️</div>
+    <h3>たべるリスト</h3>
+    <div class="line"></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="mini-card">
+      <div class="mc-emoji">🍣</div>
+      <div class="mc-name">回転寿司</div>
+      <div class="mc-detail">小樽の地魚ネタ<br>和楽 / 函太郎</div>
+      <div class="mc-when">Day 1 小樽</div>
+    </div>
+    <div class="mini-card">
+      <div class="mc-emoji">🍨</div>
+      <div class="mc-name">〆パフェ</div>
+      <div class="mc-detail">ななかま堂<br>ROJIURA CAFE</div>
+      <div class="mc-when">Day 1 すすきの</div>
+    </div>
+    <div class="mini-card">
+      <div class="mc-emoji">🍕</div>
+      <div class="mc-name">SHIRO CAFE</div>
+      <div class="mc-detail">限定ピッツァ<br>バレンタインスイーツ</div>
+      <div class="mc-when">Day 2 砂川</div>
+    </div>
+    <div class="mini-card">
+      <div class="mc-emoji">🍛</div>
+      <div class="mc-name">スープカレー</div>
+      <div class="mc-detail">SAMURAI. / KING<br>マジックスパイス</div>
+      <div class="mc-when">Day 2 札幌</div>
+    </div>
+    <div class="mini-card">
+      <div class="mc-emoji">🍦</div>
+      <div class="mc-name">ソフトクリーム</div>
+      <div class="mc-detail">よつ葉 / きのとや<br>ルタオ / 雪印</div>
+      <div class="mc-when">Day 3 空港</div>
+    </div>
+    <div class="mini-card">
+      <div class="mc-emoji">🍺</div>
+      <div class="mc-name">クラフトビール</div>
+      <div class="mc-detail">よなよなエール<br>球場内醸造！</div>
+      <div class="mc-when">Day 3 Fビレッジ</div>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <div class="emoji">🎁</div>
+    <h3>おみやげリスト</h3>
+    <div class="line"></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="mini-card">
+      <div class="mc-emoji">❄️</div>
+      <div class="mc-name">SNOWS</div>
+      <div class="mc-detail">スノーサンド / 雪ひとつ<br>⚠️ 雪まつりは2/11で終了</div>
+      <div class="mc-when">Day 2 札幌百貨店で探索</div>
+    </div>
+    <div class="mini-card">
+      <div class="mc-emoji">🥐</div>
+      <div class="mc-name">生ノースマン</div>
+      <div class="mc-detail">要冷蔵・賞味期限3日<br>保冷剤つきで購入</div>
+      <div class="mc-when">Day 3 空港で！</div>
+    </div>
+  </div>
+
+  <!-- Checklist -->
+  <div class="section-header">
+    <div class="emoji">✅</div>
+    <h3>じゅんびチェック</h3>
+    <div class="line"></div>
+  </div>
+
+  <div class="checklist">
+    <div class="check-item" onclick="this.classList.toggle('checked')">
+      <div class="check-box"></div>
+      <span class="check-text">白い恋人パーク お菓子作り体験を予約する</span>
+    </div>
+    <div class="check-item" onclick="this.classList.toggle('checked')">
+      <div class="check-box"></div>
+      <span class="check-text">防寒装備（防風アウター・スノーブーツ・手袋・帽子）</span>
+    </div>
+    <div class="check-item" onclick="this.classList.toggle('checked')">
+      <div class="check-box"></div>
+      <span class="check-text">Day 3 の過ごし方を決める（Fビレッジ / スノーランド / 水族館）</span>
+    </div>
+    <div class="check-item" onclick="this.classList.toggle('checked')">
+      <div class="check-box"></div>
+      <span class="check-text">SNOWS 取り扱い店舗を事前リサーチ</span>
+    </div>
+    <div class="check-item" onclick="this.classList.toggle('checked')">
+      <div class="check-box"></div>
+      <span class="check-text">〆パフェ候補店の営業日をチェック</span>
+    </div>
+    <div class="check-item" onclick="this.classList.toggle('checked')">
+      <div class="check-box"></div>
+      <span class="check-text">カイロたくさん持った？🔥</span>
+    </div>
+    <div class="check-item" onclick="this.classList.toggle('checked')">
+      <div class="check-box"></div>
+      <span class="check-text">JRは突然の運休あり → 常に1本早い列車を選ぶ！</span>
+    </div>
+  </div>
+
+  <!-- Hotel -->
+  <div class="section-header">
+    <div class="emoji">🏨</div>
+    <h3>おやど</h3>
+    <div class="line"></div>
+  </div>
+
+  <div class="mini-card" style="text-align:center; padding:22px;">
+    <div class="mc-name" style="font-size:15px;">ベッセルイン札幌中島公園</div>
+    <div class="mc-detail" style="margin-top:8px;">
+      札幌市中央区 ｜ すすきの徒歩圏内<br>
+      2泊（2/14・2/15）
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="big-emoji">⛄ 🧣 ❄️</div>
+    たのしい北海道になりますように！<br>
+    あたたかくしていってらっしゃい ♡
+  </div>
+
+</div>
+
+<script>
+  // Snowflakes
+  const snowContainer = document.getElementById('snow');
+  const flakes = ['❄', '❅', '❆', '✻', '•'];
+  for (let i = 0; i < 28; i++) {
+    const s = document.createElement('div');
+    s.className = 'snowflake';
+    s.textContent = flakes[Math.floor(Math.random() * flakes.length)];
+    s.style.left = Math.random() * 100 + '%';
+    s.style.fontSize = (8 + Math.random() * 12) + 'px';
+    s.style.opacity = 0.3 + Math.random() * 0.5;
+    s.style.animationDuration = (6 + Math.random() * 10) + 's';
+    s.style.animationDelay = Math.random() * 10 + 's';
+    snowContainer.appendChild(s);
+  }
+
+  // Day 3 plan switcher
+  function switchPlan(plan) {
+    document.querySelectorAll('.alt-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.alt-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('plan-' + plan).classList.add('active');
+    event.currentTarget.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
