@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>❄️ 北海道ふゆたび しおり 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Kaisei+Opti:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --snow:#F7F3EE;--ice:#B8D8E8;--night:#2B4066;--candle:#E8A87C;
+    --sakura:#F2C6C2;--lav:#C5B9D8;--mint:#B5D8CC;--rose:#C2727A;
+    --cream:#FFF8F0;--gray:#8B8B8B;--gold:#D4A94B;
+  }
+  body{font-family:'Zen Maru Gothic',sans-serif;background:var(--snow);color:var(--night);overflow-x:hidden}
+
+  /* ── snow ── */
+  .snow-wrap{position:fixed;inset:0;pointer-events:none;z-index:999;overflow:hidden}
+  .sf{position:absolute;top:-20px;color:#fff;opacity:.6;animation:fall linear infinite;text-shadow:0 0 4px rgba(184,216,232,.4)}
+  @keyframes fall{to{transform:translateY(105vh) rotate(360deg)}}
+
+  /* ── cover ── */
+  .cover{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(180deg,#1a2e4a 0%,#2B4066 15%,#4A6FA5 42%,#B8D8E8 72%,#F7F3EE 100%);position:relative;overflow:hidden;padding:40px 20px}
+  .cover::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:110px;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 110' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,55 Q150,0 300,55 T600,55 T900,55 T1200,55 V110 H0Z' fill='%23F7F3EE'/%3E%3C/svg%3E") no-repeat bottom/cover}
+  .cc{background:rgba(255,255,255,.12);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border:1.5px solid rgba(255,255,255,.22);border-radius:32px;padding:50px 42px;text-align:center;max-width:390px;position:relative;z-index:2;animation:floatIn 1s ease-out}
+  @keyframes floatIn{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+  .cc-emoji{font-size:48px;margin-bottom:14px;animation:pulse 3s ease-in-out infinite;letter-spacing:10px}
+  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+  .cc h1{font-family:'Kaisei Opti',serif;font-size:32px;font-weight:700;color:#fff;letter-spacing:6px;text-shadow:0 2px 14px rgba(43,64,102,.22)}
+  .cc .sub{font-size:12.5px;color:rgba(255,255,255,.75);letter-spacing:3px;margin:6px 0 22px}
+  .cc .dates{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.14);border-radius:50px;padding:8px 26px;font-size:12.5px;color:#fff;letter-spacing:1.5px}
+  .cc .ver{margin-top:14px;font-size:9.5px;color:rgba(255,255,255,.4);letter-spacing:1px}
+
+  /* ── layout ── */
+  .wrap{max-width:520px;margin:0 auto;padding:20px 20px 60px}
+
+  /* ── day card ── */
+  .dc{background:#fff;border-radius:24px;margin-bottom:26px;overflow:hidden;box-shadow:0 4px 26px rgba(43,64,102,.055);animation:up .6s ease-out both}
+  .dc:nth-child(1){animation-delay:.1s}.dc:nth-child(2){animation-delay:.25s}.dc:nth-child(3){animation-delay:.4s}
+  @keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+  .dh{padding:22px 24px 12px;display:flex;align-items:center;gap:14px}
+  .db{width:54px;height:54px;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font-weight:700;flex-shrink:0}
+  .db .n{font-size:20px;line-height:1}.db .l{font-size:9px;letter-spacing:1px;margin-top:2px}
+  .d1 .db{background:linear-gradient(135deg,#7EB5D6,#2B4066)}
+  .d2 .db{background:linear-gradient(135deg,#B9A0D4,#6B5A9E)}
+  .d3 .db{background:linear-gradient(135deg,#8BC5B0,#3A7D65)}
+  .dt h2{font-size:17px;font-weight:700;line-height:1.3}
+  .dt .rt{font-size:11px;color:var(--gray);margin-top:3px;letter-spacing:.5px}
+  .dd{padding:0 24px 24px}
+
+  /* ── timeline ── */
+  .tl{position:relative;padding-left:24px}
+  .tl::before{content:'';position:absolute;left:6px;top:8px;bottom:8px;width:2px;border-radius:2px}
+  .d1 .tl::before{background:linear-gradient(to bottom,var(--ice),var(--candle))}
+  .d2 .tl::before{background:linear-gradient(to bottom,var(--lav),var(--mint))}
+  .d3 .tl::before{background:linear-gradient(to bottom,var(--mint),var(--ice))}
+  .ti{position:relative;padding-bottom:18px}.ti:last-child{padding-bottom:0}
+  .dot{position:absolute;left:-21px;top:5px;width:12px;height:12px;border-radius:50%;border:2.5px solid var(--ice);background:#fff}
+  .ti.hl .dot{background:var(--candle);border-color:var(--candle);box-shadow:0 0 8px rgba(232,168,124,.35)}
+  .ti.hp .dot{background:var(--lav);border-color:#7B68AE;box-shadow:0 0 8px rgba(123,104,174,.25)}
+  .ti.hg .dot{background:var(--mint);border-color:#4A8B6A;box-shadow:0 0 8px rgba(74,139,106,.25)}
+  .tm{font-size:11px;font-weight:700;color:var(--gray);margin-bottom:2px}
+  .tc{font-size:14px;line-height:1.65}
+  .tc .pl{font-weight:700;color:var(--night)}
+  .tc .ds{font-size:12px;color:#777;margin-top:2px;line-height:1.6}
+  .tg{display:inline-block;font-size:10px;padding:2px 9px;border-radius:50px;margin-top:5px;margin-right:4px;font-weight:500}
+  .t-f{background:#FFF0E6;color:#C47A3A}.t-e{background:#E6F0FF;color:#4A6FA5}
+  .t-s{background:#F0E6FF;color:#7B68AE}.t-x{background:#E6FFF0;color:#4A8B6A}
+  .t-r{background:#FFF0F0;color:#C2727A}.t-n{background:#FFF6DB;color:#B8860B}
+
+  /* ── tip ── */
+  .tip{border-radius:16px;padding:14px 16px;margin-top:16px;font-size:12px;line-height:1.7;border-left:3px solid var(--candle);background:var(--cream);color:#6B5E4F}
+  .tip b{color:var(--candle);display:block;margin-bottom:2px}
+  .tip.tp{border-left-color:#7B68AE}.tip.tp b{color:#7B68AE}
+  .tip.tg2{border-left-color:#4A8B6A}.tip.tg2 b{color:#4A8B6A}
+  .tip.tw{border-left-color:var(--rose);background:#FFF5F5}.tip.tw b{color:var(--rose)}
+
+  /* ── section header ── */
+  .sh{text-align:center;padding:44px 0 22px}
+  .sh .em{font-size:32px;margin-bottom:8px}
+  .sh h3{font-family:'Kaisei Opti',serif;font-size:18px;font-weight:700;letter-spacing:2px}
+  .sh .ln{width:40px;height:2px;background:var(--candle);margin:10px auto 0;border-radius:2px}
+
+  /* ── detail card ── */
+  .dtc{background:#fff;border-radius:20px;padding:22px 24px;margin-bottom:14px;box-shadow:0 2px 14px rgba(43,64,102,.045)}
+  .dtc h4{font-size:14px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:6px}
+  .dr{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px dashed #EDE8E3;font-size:12px}
+  .dr:last-child{border-bottom:none}
+  .dr .la{color:var(--gray)}.dr .va{font-weight:700}
+
+  /* ── menu item ── */
+  .mi{background:linear-gradient(135deg,#FDFAF6,#FFF8F0);border-radius:14px;padding:13px 16px;margin-bottom:10px;border:1px solid #F0EBE4}
+  .mi .mn{font-size:13px;font-weight:700;margin-bottom:3px}
+  .mi .md{font-size:11px;color:#888;line-height:1.5}
+  .mi .mp{font-size:11px;color:var(--candle);font-weight:700;margin-top:4px}
+
+  /* ── grids ── */
+  .g2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+  .g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:14px}
+  .mc{background:#fff;border-radius:16px;padding:15px 10px;text-align:center;box-shadow:0 2px 12px rgba(43,64,102,.045);transition:transform .2s}
+  .mc:hover{transform:translateY(-3px)}
+  .mc .me{font-size:26px;margin-bottom:5px}
+  .mc .mt{font-size:12.5px;font-weight:700}
+  .mc .mx{font-size:10px;color:var(--gray);margin-top:4px;line-height:1.45}
+  .mc .mw{display:inline-block;font-size:9px;padding:2px 8px;border-radius:50px;margin-top:5px;font-weight:500}
+  .mw-1{background:#E6F0FF;color:#4A6FA5}
+  .mw-2{background:#F0E6FF;color:#7B68AE}
+  .mw-3{background:#E6FFF0;color:#3A7D65}
+
+  /* ── checklist ── */
+  .cl{background:#fff;border-radius:20px;padding:22px 24px;box-shadow:0 2px 14px rgba(43,64,102,.045)}
+  .ci{display:flex;align-items:flex-start;gap:10px;padding:8px 0;font-size:13px;line-height:1.5;border-bottom:1px dashed #EDE8E3;cursor:pointer;user-select:none}
+  .ci:last-child{border-bottom:none}
+  .cb{width:20px;height:20px;border:2px solid var(--ice);border-radius:6px;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+  .ci.ok .cb{background:var(--mint);border-color:#4A8B6A}
+  .ci.ok .cb::after{content:'✓';color:#fff;font-size:12px;font-weight:700}
+  .ci.ok .ct{text-decoration:line-through;color:#bbb}
+
+  /* ── footer ── */
+  .ft{text-align:center;padding:44px 20px 60px;font-size:12px;color:var(--gray);letter-spacing:1px;line-height:1.9}
+  .ft .be{font-size:34px;margin-bottom:12px;letter-spacing:8px}
+
+  @media print{.snow-wrap{display:none}.cover{min-height:auto;padding:30px;break-after:page}.dc{break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<div class="snow-wrap" id="sw"></div>
+
+<!-- ═══ COVER ═══ -->
+<div class="cover">
+  <div class="cc">
+    <div class="cc-emoji">❄️ 🦌 ✨</div>
+    <h1>北海道ふゆたび</h1>
+    <div class="sub">〜 雪と光とおいしいもの 〜</div>
+    <div class="dates">2026. 2. 14 sat → 2. 16 mon</div>
+    <div class="ver">final edition ✿</div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- ═══════════════════════════════════════
+     DAY 1 ─ 2/14 SAT
+     ═══════════════════════════════════════ -->
+<div class="dc d1">
+  <div class="dh">
+    <div class="db"><span class="n">14</span><span class="l">SAT</span></div>
+    <div class="dt">
+      <h2>🕯️ キャンドルの街へ</h2>
+      <div class="rt">広島 ✈ 新千歳 → 札幌 → 小樽 → 札幌</div>
+    </div>
+  </div>
+  <div class="dd">
+    <div class="tl">
+      <div class="ti">
+        <div class="dot"></div>
+        <div class="tm">08:05 → 10:00</div>
+        <div class="tc">
+          <span class="pl">✈ 広島空港 → 新千歳空港</span>
+          <div class="ds">JR快速エアポートで札幌へ → ベッセルイン札幌中島公園に荷物を預けて身軽に！</div>
+        </div>
+      </div>
+      <div class="ti">
+        <div class="dot"></div>
+        <div class="tm">13:00 〜 15:30</div>
+        <div class="tc">
+          <span class="pl">🍪 白い恋人パーク</span>
+          <div class="ds">お絵描きコース（約30分）でオリジナルクッキーづくり♡ 2026年は製造ライン見学休止中 → 360°バーチャル見学を楽しもう</div>
+          <span class="tg t-x">体験</span><span class="tg t-s">要予約</span>
+        </div>
+      </div>
+      <div class="ti hl">
+        <div class="dot"></div>
+        <div class="tm">16:30 〜 21:00</div>
+        <div class="tc">
+          <span class="pl">🕯️ 小樽雪あかりの路【最終日！】</span>
+          <div class="ds">小樽オルゴール堂 → 17:00 約6万本のキャンドル点灯✨ 運河の浮き玉キャンドル＆手宮線のスノーキャンドルは必見</div>
+          <span class="tg t-e">イベント</span>
+        </div>
+      </div>
+      <div class="ti">
+        <div class="dot"></div>
+        <div class="tm">小樽の夜</div>
+        <div class="tc">
+          <span class="pl">🍣 回転寿司</span>
+          <div class="ds">港町の地魚ネタ！ ホタテ・八角・ニシン（和楽 / 函太郎）</div>
+          <span class="tg t-f">グルメ</span>
+        </div>
+      </div>
+    </div>
+    <div class="tip">
+      <b>💡 ポイント</b>
+      雪あかりの路は 2/14 が最終日！この日限り。数万本のキャンドルはボランティアの手で一本ずつ灯されています🕯️
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     DAY 2 ─ 2/15 SUN
+     ═══════════════════════════════════════ -->
+<div class="dc d2">
+  <div class="dh">
+    <div class="db"><span class="n">15</span><span class="l">SUN</span></div>
+    <div class="dt">
+      <h2>🌿 自分だけの香りをつくる</h2>
+      <div class="rt">札幌 → 砂川 → 札幌（11:00 ゆっくり出発 🛏️）</div>
+    </div>
+  </div>
+  <div class="dd">
+    <div class="tl">
+      <div class="ti">
+        <div class="dot"></div>
+        <div class="tm">〜 11:00</div>
+        <div class="tc">
+          <span class="pl">🛏️ 朝はゆっくり回復タイム</span>
+          <div class="ds">昨夜の小樽散策の疲れをしっかり回復。11:00 ホテル出発！</div>
+          <span class="tg t-r">回復</span>
+        </div>
+      </div>
+      <div class="ti">
+        <div class="dot"></div>
+        <div class="tm">11:00 → 12:30</div>
+        <div class="tc">
+          <span class="pl">🚃 札幌 → 砂川へ移動</span>
+          <div class="ds">JR特急またはレンタカーで約1時間強</div>
+        </div>
+      </div>
+      <div class="ti hp">
+        <div class="dot"></div>
+        <div class="tm">12:30 〜 16:30</div>
+        <div class="tc">
+          <span class="pl">🧴 SHIRO みんなの工場</span>
+          <div class="ds">① まず整理券を取る！ → ② SHIRO CAFE でランチ → ③ ガラス張り工場見学 → ④ ブレンダーラボでマイフレグランス♡</div>
+          <span class="tg t-x">体験</span><span class="tg t-f">カフェ</span><span class="tg t-n">限定メニュー</span>
+        </div>
+      </div>
+      <div class="ti">
+        <div class="dot"></div>
+        <div class="tm">16:30 〜 18:30</div>
+        <div class="tc">
+          <span class="pl">🛍️ おみやげ探索（札幌）</span>
+          <div class="ds">SNOWS → 大丸札幌店などの百貨店で探す。⚠️ 雪まつりは2/11で終了済</div>
+          <span class="tg t-s">おみやげ</span>
+        </div>
+      </div>
+      <div class="ti">
+        <div class="dot"></div>
+        <div class="tm">19:00 〜</div>
+        <div class="tc">
+          <span class="pl">🍛 スープカレー</span>
+          <div class="ds">SAMURAI.（野菜）/ KING本店（Wスープ）/ マジックスパイス（元祖）</div>
+          <span class="tg t-f">グルメ</span>
+        </div>
+      </div>
+      <div class="ti hl">
+        <div class="dot"></div>
+        <div class="tm">21:00 〜</div>
+        <div class="tc">
+          <span class="pl">🍨 〆パフェ（すすきの）</span>
+          <div class="ds">ななかま堂（〜2:00）/ ROJIURA CAFE（〜3:00）/ INITIAL（〜24:00）でご褒美タイム♡</div>
+          <span class="tg t-f">グルメ</span>
+        </div>
+      </div>
+    </div>
+    <div class="tip tp">
+      <b>💡 SHIRO のポイント</b>
+      ブレンダーラボは予約不可！到着したらまず発券機で整理券を取る → カフェやショップで待つのが正解。最終受付 18:30⏰
+    </div>
+  </div>
+</div>
+
+<!-- ── SHIRO 詳細 ── -->
+<div class="sh">
+  <div class="em">🧴</div>
+  <h3>SHIRO くわしく</h3>
+  <div class="ln"></div>
+</div>
+
+<div class="dtc">
+  <h4>🧪 ブレンダーラボ</h4>
+  <div class="dr"><span class="la">所要時間</span><span class="va">約15分（全9ステップ）</span></div>
+  <div class="dr"><span class="la">40mL</span><span class="va">¥4,180（税込）</span></div>
+  <div class="dr"><span class="la">80mL</span><span class="va">¥5,170（税込）</span></div>
+  <div class="dr"><span class="la">タイプ</span><span class="va">オードパルファン / ボディコロン</span></div>
+  <div class="dr"><span class="la">砂川限定✨</span><span class="va" style="color:#C2727A">🍑 フルーツブーケ</span></div>
+  <div class="dr"><span class="la">定番の香り</span><span class="va" style="font-weight:400;font-size:11px">サボン / ホワイトリリー / ホワイトティー / アールグレイ / キンモクセイ ほか</span></div>
+</div>
+
+<div class="dtc">
+  <h4>🍕 SHIRO CAFE 限定メニュー（2月〜）</h4>
+  <div class="mi">
+    <div class="mn">🐟 スモークサーモンとルッコラのサラダピッツァ</div>
+    <div class="md">スモークサーモン × 白糠町産リコッタチーズ。サラダ感覚の軽やかな一品</div>
+    <div class="mp">¥2,200</div>
+  </div>
+  <div class="mi">
+    <div class="mn">🍖 自家製サルシッチャ 道産チーズとキノコのピッツァ</div>
+    <div class="md">ハーブ香る自家製腸詰め × 4種キノコ。沼田町の間伐材で焚く薪窯焼き🔥</div>
+    <div class="mp">¥2,200</div>
+  </div>
+  <div class="mi">
+    <div class="mn">🍫 自家製チョコレートプリン（バレンタイン限定💝）</div>
+    <div class="md">カカオ × メープル × 三温糖。いちごソース＆メープルクリーム添え</div>
+    <div class="mp">¥825</div>
+  </div>
+  <div class="mi">
+    <div class="mn">🍫 チョコバスクチーズケーキ（バレンタイン限定💝）</div>
+    <div class="md">チーズ × チョコの濃厚ハーモニー。下層にチョコチップ＆クランブル</div>
+    <div class="mp">¥990</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     DAY 3 ─ 2/16 MON
+     ═══════════════════════════════════════ -->
+<div class="dc d3">
+  <div class="dh">
+    <div class="db"><span class="n">16</span><span class="l">MON</span></div>
+    <div class="dt">
+      <h2>🍣 お寿司と温泉の最終日</h2>
+      <div class="rt">札幌 → 北広島（Fビレッジ）→ 新千歳空港 ✈ 広島</div>
+    </div>
+  </div>
+  <div class="dd">
+    <div class="tl">
+      <div class="ti">
+        <div class="dot"></div>
+        <div class="tm">09:30</div>
+        <div class="tc">
+          <span class="pl">🏨 チェックアウト</span>
+          <div class="ds">JRで北広島駅へ（約20分）</div>
+        </div>
+      </div>
+      <div class="ti hg">
+        <div class="dot"></div>
+        <div class="tm">11:30 〜 12:30</div>
+        <div class="tc">
+          <span class="pl">🍣 函太郎（Fビレッジ店）</span>
+          <div class="ds">函館発祥の本格回転寿司！ オフシーズンの巨大球場で味わう極上のネタ。月曜も 11:00〜21:00 で営業中◎</div>
+          <span class="tg t-f">ランチ</span>
+        </div>
+      </div>
+      <div class="ti hg">
+        <div class="dot"></div>
+        <div class="tm">12:30 〜 15:30</div>
+        <div class="tc">
+          <span class="pl">♨️ tower eleven onsen & sauna</span>
+          <div class="ds">球場を見渡す天然温泉＆サウナで3日分の冷えと疲れをリセット🧖‍♀️ 月曜も 11:00〜21:00 営業</div>
+          <span class="tg t-r">温泉</span><span class="tg t-r">サウナ</span>
+        </div>
+      </div>
+      <div class="ti">
+        <div class="dot"></div>
+        <div class="tm">15:30 → 16:30</div>
+        <div class="tc">
+          <span class="pl">🚃 JR快速エアポートで空港へ</span>
+          <div class="ds">北広島→新千歳空港 約20分。余裕をもって移動！</div>
+        </div>
+      </div>
+      <div class="ti">
+        <div class="dot"></div>
+        <div class="tm">16:30 〜 18:40</div>
+        <div class="tc">
+          <span class="pl">✈ 新千歳空港</span>
+          <div class="ds">生ノースマン🥐を保冷剤つきで購入 → ソフトクリーム🍦で旅の〆！→ 18:40 搭乗</div>
+          <span class="tg t-s">おみやげ</span><span class="tg t-f">グルメ</span>
+        </div>
+      </div>
+    </div>
+    <div class="tip tg2">
+      <b>♨️ Fビレッジを選んだ理由</b>
+      支笏湖は飛行機に間に合わないリスク＆極寒でヘトヘトに…💦 代わりに温泉で疲労リセット→屋内で天候も安心→空港まで近い→最高！
+    </div>
+    <div class="tip tw" style="margin-top:10px">
+      <b>🌨️ 吹雪のときは…</b>
+      北広島で途中下車が危険なら空港直行！新千歳空港内にも「札幌魚河岸 五十七番寿し」「函太郎 空港店」があるのでお寿司要件はクリアできます🍣
+    </div>
+  </div>
+</div>
+
+<!-- ── たべるリスト ── -->
+<div class="sh">
+  <div class="em">🍽️</div>
+  <h3>たべるリスト</h3>
+  <div class="ln"></div>
+</div>
+<div class="g3">
+  <div class="mc"><div class="me">🍣</div><div class="mt">回転寿司</div><div class="mx">小樽で地魚</div><div class="mw mw-1">Day 1</div></div>
+  <div class="mc"><div class="me">🍨</div><div class="mt">〆パフェ</div><div class="mx">ななかま堂<br>ROJIURA</div><div class="mw mw-2">Day 2</div></div>
+  <div class="mc"><div class="me">🍕</div><div class="mt">SHIRO CAFE</div><div class="mx">限定ピッツァ<br>チョコスイーツ</div><div class="mw mw-2">Day 2</div></div>
+  <div class="mc"><div class="me">🍛</div><div class="mt">スープカレー</div><div class="mx">SAMURAI.<br>KING / マジスパ</div><div class="mw mw-2">Day 2</div></div>
+  <div class="mc"><div class="me">🍣</div><div class="mt">函太郎</div><div class="mx">Fビレッジ店<br>本格握り</div><div class="mw mw-3">Day 3</div></div>
+  <div class="mc"><div class="me">🍦</div><div class="mt">ソフトクリーム</div><div class="mx">よつ葉 / きのとや<br>ルタオ / 雪印</div><div class="mw mw-3">Day 3</div></div>
+</div>
+
+<!-- ── おみやげ ── -->
+<div class="sh">
+  <div class="em">🎁</div>
+  <h3>おみやげリスト</h3>
+  <div class="ln"></div>
+</div>
+<div class="g2">
+  <div class="mc">
+    <div class="me">❄️</div><div class="mt">SNOWS</div>
+    <div class="mx">スノーサンド / 雪ひとつ<br>⚠️ 雪まつりは2/11終了</div>
+    <div class="mw mw-2">Day 2 札幌百貨店</div>
+  </div>
+  <div class="mc">
+    <div class="me">🥐</div><div class="mt">生ノースマン</div>
+    <div class="mx">要冷蔵 / 賞味期限3日<br>保冷剤つきで購入</div>
+    <div class="mw mw-3">Day 3 空港で！</div>
+  </div>
+</div>
+
+<!-- ── チェックリスト ── -->
+<div class="sh">
+  <div class="em">✅</div>
+  <h3>じゅんびチェック</h3>
+  <div class="ln"></div>
+</div>
+<div class="cl">
+  <div class="ci" onclick="this.classList.toggle('ok')"><div class="cb"></div><span class="ct">白い恋人パーク お菓子作り体験を予約</span></div>
+  <div class="ci" onclick="this.classList.toggle('ok')"><div class="cb"></div><span class="ct">防寒装備（防風アウター・スノーブーツ・手袋・帽子）</span></div>
+  <div class="ci" onclick="this.classList.toggle('ok')"><div class="cb"></div><span class="ct">SNOWS の取り扱い店舗を事前リサーチ</span></div>
+  <div class="ci" onclick="this.classList.toggle('ok')"><div class="cb"></div><span class="ct">〆パフェ候補店の営業日をチェック</span></div>
+  <div class="ci" onclick="this.classList.toggle('ok')"><div class="cb"></div><span class="ct">Fビレッジ tower eleven の持ち物確認（タオル等）</span></div>
+  <div class="ci" onclick="this.classList.toggle('ok')"><div class="cb"></div><span class="ct">JRは突然の運休あり → 常に1本早い列車を！</span></div>
+  <div class="ci" onclick="this.classList.toggle('ok')"><div class="cb"></div><span class="ct">カイロたくさん持った？🔥</span></div>
+</div>
+
+<!-- ── おやど ── -->
+<div class="sh">
+  <div class="em">🏨</div>
+  <h3>おやど</h3>
+  <div class="ln"></div>
+</div>
+<div class="mc" style="padding:20px;">
+  <div class="mt" style="font-size:15px">ベッセルイン札幌中島公園</div>
+  <div class="mx" style="margin-top:8px">札幌市中央区 ｜ すすきの徒歩圏内<br>2泊（2/14・2/15）</div>
+</div>
+
+<!-- ── footer ── -->
+<div class="ft">
+  <div class="be">⛄ 🧣 ❄️</div>
+  たのしい北海道になりますように！<br>
+  あたたかくしていってらっしゃい ♡
+</div>
+
+</div><!-- /wrap -->
+
+<script>
+const c=document.getElementById('sw'),f=['❄','❅','❆','✻','•'];
+for(let i=0;i<26;i++){const s=document.createElement('div');s.className='sf';s.textContent=f[Math.random()*f.length|0];s.style.left=Math.random()*100+'%';s.style.fontSize=(8+Math.random()*12)+'px';s.style.opacity=.3+Math.random()*.45;s.style.animationDuration=(6+Math.random()*10)+'s';s.style.animationDelay=Math.random()*10+'s';c.appendChild(s)}
+</script>
+</body>
+</html>
